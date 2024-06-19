@@ -1,5 +1,10 @@
 <div class="row">
   <!-- listCvs(cvs) -->
-  <div class="col"><app-list [cvs]="cvs"/></div>
-  <div class="col"><app-cv-card/></div>
+  <div class="col">
+    <app-list
+      (forwardSelectedCv)="onSelectCv($event)"
+      [cvs]="cvs"/></div>
+  <div class="col">
+    <app-cv-card [cv]="selectedCv"/>
+  </div>
 </div>
