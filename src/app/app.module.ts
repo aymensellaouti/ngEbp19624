@@ -7,6 +7,9 @@ import { FirstComponent } from './components/first/first.component';
 import { SecondComponent } from './components/second/second.component';
 import { ThirdComponent } from './components/third/third.component';
 import { ColorComponent } from './components/color/color.component';
+import { TwoWayComponent } from './components/two-way/two-way.component';
+import { FormsModule } from '@angular/forms';
+import { CardComponent } from './components/card/card.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +17,14 @@ import { ColorComponent } from './components/color/color.component';
     FirstComponent,
     SecondComponent,
     ThirdComponent,
-    ColorComponent
+    ColorComponent,
+    TwoWayComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
