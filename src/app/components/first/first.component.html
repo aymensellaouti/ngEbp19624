@@ -1,0 +1,11 @@
+<p [hidden]="isHidden"> {{ color }}  works!</p>
+
+<button
+  (click)="showHide()"
+>Show/Hide</button>
+<input #monInput (change)="changeMessage(monInput.value)" type="text">
+
+<p>Le contenu de l'input est : {{message}} </p>
+<div class="alert alert-success">
+  <app-second/>
+</div>
