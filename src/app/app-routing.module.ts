@@ -5,11 +5,13 @@ import { TodoComponent } from './todo/todo/todo.component';
 import { CvComponent } from './cv/cv/cv.component';
 import { MiniWordComponent } from './directives/mini-word/mini-word.component';
 import { SecondComponent } from './components/second/second.component';
+import { DetailsCvComponent } from './cv/details-cv/details-cv.component';
 // cv
 const routes: Routes = [
   {path: '', component: FirstComponent},
   {path: 'todo', component: TodoComponent},
   {path: 'cv', component: CvComponent},
+  {path: 'cv/:id', component: DetailsCvComponent},
   {path: 'word', component: MiniWordComponent},
   {path: ':quelqueChose', component: SecondComponent},
 ];
