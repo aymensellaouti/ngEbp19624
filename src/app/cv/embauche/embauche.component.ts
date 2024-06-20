@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Cv } from '../model/cv';
+import { EmbaucheService } from '../service/embauche-service.service';
 
 @Component({
   selector: 'app-embauche',
@@ -8,5 +9,8 @@ import { Cv } from '../model/cv';
 })
 export class EmbaucheComponent {
   embauchees: Cv[] = [];
-  constructor() {}
+  embaucheService =inject(EmbaucheService);
+  constructor() {
+    this.embauchees = this.embaucheService.getEmbauchees();
+  }
 }
