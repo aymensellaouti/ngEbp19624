@@ -24,6 +24,7 @@ import { EmbaucheComponent } from './cv/embauche/embauche.component';
 import { DetailsCvComponent } from './cv/details-cv/details-cv.component';
 import { LampeComponent } from './directives/lampe/lampe.component';
 import { HighlightDirective } from './directives/highlight.directive';
+import { RainbowDirective } from './directives/rainbow.directive';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { HighlightDirective } from './directives/highlight.directive';
     EmbaucheComponent,
     DetailsCvComponent,
     LampeComponent,
-    HighlightDirective
+    HighlightDirective,
+    RainbowDirective
   ],
   imports: [
     BrowserModule,
