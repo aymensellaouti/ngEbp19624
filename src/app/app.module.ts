@@ -32,6 +32,7 @@ import { DefaultImagePipe } from './cv/pipes/default-image.pipe';
 import { LoggerService } from './services/logger.service';
 import { SayHelloService } from './services/say-hello.service';
 import { WeekTodoComponent } from './todo/week-todo/week-todo.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { WeekTodoComponent } from './todo/week-todo/week-todo.component';
     RainbowDirective,
     DefaultImagePipe,
     WeekTodoComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
