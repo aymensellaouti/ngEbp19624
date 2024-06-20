@@ -22,6 +22,8 @@ import { TodoComponent } from './todo/todo/todo.component';
 import { LoginComponent } from './auth/login/login.component';
 import { EmbaucheComponent } from './cv/embauche/embauche.component';
 import { DetailsCvComponent } from './cv/details-cv/details-cv.component';
+import { LampeComponent } from './directives/lampe/lampe.component';
+import { HighlightDirective } from './directives/highlight.directive';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,9 @@ import { DetailsCvComponent } from './cv/details-cv/details-cv.component';
     TodoComponent,
     LoginComponent,
     EmbaucheComponent,
-    DetailsCvComponent
+    DetailsCvComponent,
+    LampeComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
