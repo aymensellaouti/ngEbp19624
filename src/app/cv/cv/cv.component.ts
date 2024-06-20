@@ -23,7 +23,7 @@ export class CvComponent {
       'sellaouti',
       'skan',
       'dev',
-      'rotating_card_profile2.png',
+      '    ',
       '12345',
       12
     ),
