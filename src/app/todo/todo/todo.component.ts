@@ -10,6 +10,7 @@ import { TodoService } from '../service/todo.service';
 })
 export class TodoComponent {
   todos: Todo[] = [];
+  // L'image du formulaire
   todo = new Todo();
   constructor(private todoService: TodoService) {
     this.todos = this.todoService.getTodos();

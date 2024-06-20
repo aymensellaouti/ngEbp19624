@@ -26,6 +26,9 @@ import { LampeComponent } from './directives/lampe/lampe.component';
 import { HighlightDirective } from './directives/highlight.directive';
 import { RainbowDirective } from './directives/rainbow.directive';
 import { DefaultImagePipe } from './cv/pipes/default-image.pipe';
+import { LoggerService } from './services/logger.service';
+import { SayHelloService } from './services/say-hello.service';
+import { WeekTodoComponent } from './todo/week-todo/week-todo.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +54,8 @@ import { DefaultImagePipe } from './cv/pipes/default-image.pipe';
     LampeComponent,
     HighlightDirective,
     RainbowDirective,
-    DefaultImagePipe
+    DefaultImagePipe,
+    WeekTodoComponent
   ],
   imports: [
     BrowserModule,
