@@ -36,6 +36,7 @@ import { WeekTodoComponent } from './todo/week-todo/week-todo.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { TestFormComponent } from './components/test-form/test-form.component';
 import { TestObservableComponent } from './components/test-observable/test-observable.component';
+import { AddCvComponent } from './cv/add-cv/add-cv.component';
 
 @NgModule({
   declarations: [
@@ -66,6 +67,7 @@ import { TestObservableComponent } from './components/test-observable/test-obser
     NavbarComponent,
     TestFormComponent,
     TestObservableComponent,
+    AddCvComponent,
   ],
   imports: [
     BrowserModule,

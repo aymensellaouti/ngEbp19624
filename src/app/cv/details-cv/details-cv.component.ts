@@ -18,15 +18,20 @@ export class DetailsCvComponent {
   toastr = inject(ToastrService);
   ngOnInit() {
     const id = this.acr.snapshot.params['id'];
-    this.cv = this.cvService.getCvById(+id);
-    if (!this.cv) this.router.navigate([APP_ROUTES.cv]);
+    this.cvService.getCvById(+id).subscribe({
+      next: (cv) => this.cv = cv,
+      error: (e) => this.router.navigate([APP_ROUTES.cv])
+    });
   }
   delete() {
     if (this.cv) {
-      if(this.cvService.deleteCv(this.cv)) {
+      this.cvService.deleteCv(this.cv.id).subscribe({
+      next: (cv) => {
         this.toastr.success(`Le cv a été supprimé avec succès`);
         this.router.navigate([APP_ROUTES.cv]);
-      }
+      },
+        error: (e) => this.toastr.error(`il y a quelque chose qui cloche`)
+      });
     }
   }
 }

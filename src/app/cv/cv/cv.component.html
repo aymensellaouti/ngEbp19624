@@ -2,7 +2,7 @@
   <!-- listCvs(cvs) -->
   <div class="col">
     <app-list
-
+      *ngIf="cvs$ | async as cvs"
       [cvs]="cvs"/></div>
   <div class="col">
     <app-cv-card [cv]="selectedCv$ | async"/>
