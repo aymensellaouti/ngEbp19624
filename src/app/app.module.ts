@@ -33,6 +33,7 @@ import { LoggerService } from './services/logger.service';
 import { SayHelloService } from './services/say-hello.service';
 import { WeekTodoComponent } from './todo/week-todo/week-todo.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { TestFormComponent } from './components/test-form/test-form.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     DefaultImagePipe,
     WeekTodoComponent,
     NavbarComponent,
+    TestFormComponent,
   ],
   imports: [
     BrowserModule,
