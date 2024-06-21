@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { CvService } from '../service/cv-service.service';
 import { APP_ROUTES } from 'src/config/app-routes.config';
 import { ToastrService } from 'ngx-toastr';
+import { AuthService } from 'src/app/auth/service/auth.service';
 
 @Component({
   selector: 'app-details-cv',
@@ -16,21 +17,22 @@ export class DetailsCvComponent {
   cvService = inject(CvService);
   router = inject(Router);
   toastr = inject(ToastrService);
+  authService = inject(AuthService);
   ngOnInit() {
     const id = this.acr.snapshot.params['id'];
     this.cvService.getCvById(+id).subscribe({
-      next: (cv) => this.cv = cv,
-      error: (e) => this.router.navigate([APP_ROUTES.cv])
+      next: (cv) => (this.cv = cv),
+      error: (e) => this.router.navigate([APP_ROUTES.cv]),
     });
   }
   delete() {
     if (this.cv) {
       this.cvService.deleteCv(this.cv.id).subscribe({
-      next: (cv) => {
-        this.toastr.success(`Le cv a été supprimé avec succès`);
-        this.router.navigate([APP_ROUTES.cv]);
-      },
-        error: (e) => this.toastr.error(`il y a quelque chose qui cloche`)
+        next: (cv) => {
+          this.toastr.success(`Le cv a été supprimé avec succès`);
+          this.router.navigate([APP_ROUTES.cv]);
+        },
+        error: (e) => this.toastr.error(`il y a quelque chose qui cloche`),
       });
     }
   }
