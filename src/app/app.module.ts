@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 import { ToastrModule } from 'ngx-toastr';
 
@@ -38,6 +38,13 @@ import { TestFormComponent } from './components/test-form/test-form.component';
 import { TestObservableComponent } from './components/test-observable/test-observable.component';
 import { AddCvComponent } from './cv/add-cv/add-cv.component';
 import { authInterceptorProvider } from './auth/interceptors/auth.interceptor';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
+
 
 @NgModule({
   declarations: [
@@ -77,6 +84,14 @@ import { authInterceptorProvider } from './auth/interceptors/auth.interceptor';
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     HttpClientModule,
+    TranslateModule.forRoot({
+      defaultLanguage: 'fr',
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient],
+      },
+    }),
   ],
   providers: [authInterceptorProvider],
   bootstrap: [AppComponent],
