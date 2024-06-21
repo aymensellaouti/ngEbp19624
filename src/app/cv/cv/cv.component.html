@@ -2,10 +2,10 @@
   <!-- listCvs(cvs) -->
   <div class="col">
     <app-list
-      (forwardSelectedCv)="onSelectCv($event)"
+
       [cvs]="cvs"/></div>
   <div class="col">
-    <app-cv-card [cv]="selectedCv"/>
+    <app-cv-card [cv]="selectedCv$ | async"/>
   </div>
 </div>
 <app-embauche />

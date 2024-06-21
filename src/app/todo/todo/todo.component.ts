@@ -14,6 +14,9 @@ export class TodoComponent {
   todo = new Todo();
   constructor(private todoService: TodoService) {
     this.todos = this.todoService.getTodos();
+    this.todoService.getTodosFromApi().subscribe({
+      next: (todos) => console.log({todos})
+    })
   }
   addTodo() {
     this.todoService.addTodo(this.todo);

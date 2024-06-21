@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 import { ToastrModule } from 'ngx-toastr';
 
@@ -34,6 +35,7 @@ import { SayHelloService } from './services/say-hello.service';
 import { WeekTodoComponent } from './todo/week-todo/week-todo.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { TestFormComponent } from './components/test-form/test-form.component';
+import { TestObservableComponent } from './components/test-observable/test-observable.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +65,7 @@ import { TestFormComponent } from './components/test-form/test-form.component';
     WeekTodoComponent,
     NavbarComponent,
     TestFormComponent,
+    TestObservableComponent,
   ],
   imports: [
     BrowserModule,
@@ -70,6 +73,7 @@ import { TestFormComponent } from './components/test-form/test-form.component';
     FormsModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],
